@@ -7,7 +7,10 @@ class MangaService{
         fetch(`${this.endpoint}/mangas`)
         .then(resp => resp.json())
         .then(mangas => {
-            debugger
+            for (const manga of mangas){
+                const m = new Manga(manga)
+                m.appendToDom()
+            }
         })
     }
 }
