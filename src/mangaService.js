@@ -9,7 +9,7 @@ class MangaService{
         .then(mangas => {
             for (const manga of mangas){
                 const m = new Manga(manga)
-                m.appendToDom()
+                m.appendMangaToDom()
             }
         })
     }
@@ -24,7 +24,7 @@ class MangaService{
             release_year: document.getElementById("release_year").value
             // series_id: 1
         }
-        const configObj = {
+        const configMangaObj = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -32,15 +32,15 @@ class MangaService{
             body: JSON.stringify(manga)
         }
 
-        fetch(`${this.endpoint}/mangas`, configObj)
+        fetch(`${this.endpoint}/mangas`, configMangaObj)
         .then(resp => resp.json())
         .then(manga => {
             const m = new Manga(manga)
-            m.appendToDom()
+            m.appendMangaToDom()
         })
     }
 
-    deleteManga(){
+    deleteManga(id){
         fetch(`${this.endpoint}/mangas/${id}`, {
             method: "DELETE",
             headers: {
