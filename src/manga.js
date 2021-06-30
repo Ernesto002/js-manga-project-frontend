@@ -1,7 +1,7 @@
 class Manga {
     static all = []
     static mangaContainer = document.getElementById("manga-container")
-    static mangaForm = document.getElementById("form-container")
+    static mangaForm = document.getElementById("manga-form-container")
 
     constructor({id, title, volume_number, author, description, img, release_year, series_id}){
         this.id = id
@@ -28,6 +28,7 @@ class Manga {
                 <p>Released ${this.release_year}</p>
                 <p>By ${this.author}</p>
                 <p>${this.description}</p>
+                <p>${this.series_id}</p>
             </div>
             <button id="delete-bttn">Delete</button>
             <br>
@@ -49,6 +50,7 @@ class Manga {
             Description: <input type="text" id="description">
             Image URL: <input type="text" id="img">
             Release Year: <input type="text" id="release_year">
+            Collection: <input type="text" id="collection">
             <input type="submit" id="create">
         <form>
         `
