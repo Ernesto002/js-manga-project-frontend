@@ -21,8 +21,8 @@ class MangaService{
             author: document.getElementById("author").value,
             description: document.getElementById("description").value,
             image_url: document.getElementById("img").value,
-            release_year: document.getElementById("release_year").value
-            // series_id: 1
+            release_year: document.getElementById("release_year").value,
+            series_id: document.getElementById("collection").value
         }
         const configMangaObj = {
             method: "POST",
