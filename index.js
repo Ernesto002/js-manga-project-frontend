@@ -14,11 +14,19 @@ Collection.renderCollectionForm()
 function handleMangaSubmit(){
     event.preventDefault()
     mangaService.createManga()
-    event.target.reset
+    resetMangaForm()
 }
 
 function handleCollectionSubmit(){
     event.preventDefault()
     collectionService.createCollection()
-    event.target.reset
+    resetCollectionForm()
+}
+
+function resetCollectionForm(){
+    document.querySelector("#new-collection-form").reset()
+}
+
+function resetMangaForm(){
+    document.querySelector("#new-manga-form").reset()
 }

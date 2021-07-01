@@ -18,6 +18,7 @@ class Collection {
         this.element.addEventListener("click", this.handleCollectionDelete)
         Collection.all.push(this)
     }
+
     collectionHTML(){
         this.element.innerHTML += `
             <div>
