@@ -16,6 +16,7 @@ class Collection {
         this.element.dataset.id = this.id
         this.element.id = `collection-${this.id}`
         this.element.addEventListener("click", this.handleCollectionDelete)
+        this.element.addEventListener("click", this.handleCollectionInfo)
         Collection.all.push(this)
     }
 
@@ -24,11 +25,12 @@ class Collection {
             <div>
                 <img src=${this.img} />
                 <h3>${this.title}</h3>
-                <p>Volume Count ${this.volume_count}</p>
                 <p>Released ${this.release_year}</p>
                 <p>By ${this.author}</p>
-                <p>${this.description}</p>
             </div>
+            <button id="learn-more">Learn More</button>
+            <br>
+            <br>
             <button id="delete-collection">Delete</button>
             <br>
             <br>
@@ -43,6 +45,9 @@ class Collection {
     static renderCollectionForm(){
         Collection.collectionForm.innerHTML += `
         <form id="new-collection-form">
+            Add a Series!
+            <br>
+            <br>
             Title: <input type="text" id="collection-title">
             Volume Count: <input type="text" id="volume_count">
             Author: <input type="text" id="collection-author">
@@ -58,6 +63,12 @@ class Collection {
         if(event.target.innerText === "Delete"){
             this.element.remove()
             collectionService.deleteCollection(this.id)
+        }
+    }
+
+    handleCollectionInfo = () => {
+        if(event.target.innerText === "Learn More"){
+            collectionService.collectionInfo(this.id)
         }
     }
 }
