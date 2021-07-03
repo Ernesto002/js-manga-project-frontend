@@ -36,23 +36,17 @@ class Manga {
         `
         return this.element
     }
-    
+
     appendMangaToDom(){
         Manga.mangaContainer.append(this.mangaHTML())
-        if(collectionId != mangaId){
-            document.getElementById("manga-container").innerHTML = " "
-            document.getElementById("manga-container").innerHTML += `
-                <div>
-                    
-                </div>
-            `
-            console.log("lll")
-        }
     }
 
     static renderMangaForm(){
         Manga.mangaForm.innerHTML += `
         <form id="new-manga-form">
+            Add a volume to this collection!
+            <br>
+            <br>
             Title: <input type="text" id="title">
             Volume Number: <input type="text" id="volume_number">
             Author: <input type="text" id="author">
