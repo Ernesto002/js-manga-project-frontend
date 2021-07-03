@@ -14,24 +14,27 @@ class CollectionService{
         })
     }
 
-    createCollection(){
-        const collection = {
+    collectCollectionForm(){
+        const collectionObj = {
             title: document.getElementById("collection-title").value,
             volume_count: document.getElementById("volume_count").value,
             author: document.getElementById("collection-author").value,
             description: document.getElementById("collection-description").value,
-            image_url: document.getElementById("collection-img").value,
             release_year: document.getElementById("collection-release").value
         }
-        const configCollectionObj = {
+        return collectionObj
+    }
+
+    createCollection(){
+        event.preventDefault()
+        const options = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(collection)
+            body: JSON.stringify(this.collectCollectionForm())
         }
-
-        fetch(`${this.endpoint}/collections`, configCollectionObj)
+        fetch(`${this.endpoint}/collections`, options)
         .then(resp => resp.json())
         .then(collection => {
             const c = new Collection(collection)
@@ -39,6 +42,8 @@ class CollectionService{
         })
     }
 
+
+    
     deleteCollection(id){
         fetch(`${this.endpoint}/collections/${id}`, {
             method: "DELETE",
@@ -58,17 +63,21 @@ class CollectionService{
             Collection.collectionContainer.innerHTML = " "
             Collection.collectionForm.innerHTML = " "
             Collection.collectionContainer.innerHTML += `
-                <img src=${collectionInfo.img} />
-                <h3>${collectionInfo.title}</h3>
+                <h3 id="collection-title">${collectionInfo.title}</h3>
                 <p>${collectionInfo.volume_count} Volumes</p>
                 Released in<p>${collectionInfo.release_year}</p>
                 By <p>${collectionInfo.author}</p>
                 Description: <p>${collectionInfo.description}</p>
+                <p id="collection-id">${collectionInfo.id}</p>
                 <a id="back-bttn" href="#">Back</a>
+                <br>
+                <br>
+                Volumes Within This Collection:
             `
 
             const backBttn = document.getElementById("back-bttn")
             backBttn.addEventListener("click", goBack)
+            mangaService.getMangas()
         })
     }
 

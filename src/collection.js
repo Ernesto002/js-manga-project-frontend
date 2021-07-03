@@ -3,13 +3,12 @@ class Collection {
     static collectionContainer = document.getElementById("collection-container")
     static collectionForm = document.getElementById("collection-form-container")
 
-    constructor({id, title, volume_count, author, description, img, release_year}){
+    constructor({id, title, volume_count, author, description, release_year}){
         this.id = id
         this.title = title
         this.volume_count = volume_count
         this.author = author
         this.description = description
-        this.img = img
         this.release_year = release_year
 
         this.element = document.createElement('li')
@@ -23,7 +22,6 @@ class Collection {
     collectionHTML(){
         this.element.innerHTML += `
             <div>
-                <img src=${this.img} />
                 <h3>${this.title}</h3>
                 <p>Released ${this.release_year}</p>
                 <p>By ${this.author}</p>
@@ -52,7 +50,6 @@ class Collection {
             Volume Count: <input type="text" id="volume_count">
             Author: <input type="text" id="collection-author">
             Description: <input type="text" id="collection-description">
-            Image URL: <input type="text" id="collection-img">
             Release Year: <input type="text" id="collection-release">
             <input type="submit" id="create-collection">
         <form>

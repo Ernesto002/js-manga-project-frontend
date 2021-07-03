@@ -20,7 +20,6 @@ class MangaService{
             volume_number: document.getElementById("volume_number").value,
             author: document.getElementById("author").value,
             description: document.getElementById("description").value,
-            image_url: document.getElementById("img").value,
             release_year: document.getElementById("release_year").value,
             collection_id: document.getElementById("collection").value
         }
@@ -49,5 +48,22 @@ class MangaService{
         })
         .then(resp => resp.json())
         .then(json => alert(json.message))
+    }
+
+    mangaInfo(id){
+        fetch(`${this.endpoint}/mangas/${id}`)
+        .then(resp => resp.json())
+        .then(manga => {
+            const mangaInfo = manga
+            Manga.mangaContainer.innerHTML = " "
+            Collection.collectionContainer.innerHTML = " "
+            Manga.mangaContainer.innerHTML += `
+                <h3>${mangaInfo.title}</h3>
+                Volume <p>${mangaInfo.volume_number}</p>
+                Released <p>${mangaInfo.release_year}</p>
+                By: <p>${mangaInfo.author}</p>
+                <p>${mangaInfo.description}</p>
+            `
+        })
     }
 }
