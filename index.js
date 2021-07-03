@@ -30,3 +30,9 @@ function resetCollectionForm(){
 function resetMangaForm(){
     document.querySelector("#new-manga-form").reset()
 }
+
+function goBack(){
+    Collection.collectionContainer.innerHTML = " "
+    collectionService.getCollections()
+    Collection.renderCollectionForm()
+}

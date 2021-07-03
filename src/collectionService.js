@@ -69,7 +69,11 @@ class CollectionService{
                 Released in<p>${collectionRelease}</p>
                 By <p>${collectionAuthor}</p>
                 Description: <p>${collectionDescription}</p>
+                <a id="back-bttn" href="#">Back</a>
             `
+
+            const backBttn = document.getElementById("back-bttn")
+            backBttn.addEventListener("click", goBack)
         })
     }
 
