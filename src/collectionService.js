@@ -54,21 +54,16 @@ class CollectionService{
         fetch(`${this.endpoint}/collections/${id}`)
         .then(resp => resp.json())
         .then(collection => {
-            const collectionImg = collection.img
-            const collectionTitle = collection.title
-            const collectionVolumeCount = collection.volume_count
-            const collectionRelease = collection.release_year
-            const collectionAuthor = collection.author
-            const collectionDescription = collection.description
+            const collectionInfo = collection
             Collection.collectionContainer.innerHTML = " "
             Collection.collectionForm.innerHTML = " "
             Collection.collectionContainer.innerHTML += `
-                <img src=${collectionImg} />
-                <h3>${collectionTitle}</h3>
-                <p>${collectionVolumeCount} Volumes</p>
-                Released in<p>${collectionRelease}</p>
-                By <p>${collectionAuthor}</p>
-                Description: <p>${collectionDescription}</p>
+                <img src=${collectionInfo.img} />
+                <h3>${collectionInfo.title}</h3>
+                <p>${collectionInfo.volume_count} Volumes</p>
+                Released in<p>${collectionInfo.release_year}</p>
+                By <p>${collectionInfo.author}</p>
+                Description: <p>${collectionInfo.description}</p>
                 <a id="back-bttn" href="#">Back</a>
             `
 
