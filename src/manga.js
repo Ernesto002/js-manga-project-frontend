@@ -3,7 +3,7 @@ class Manga {
     static mangaContainer = document.getElementById("manga-container")
     static mangaForm = document.getElementById("manga-form-container")
 
-    constructor({id, title, volume_number, author, description, img, release_year, series_id}){
+    constructor({id, title, volume_number, author, description, img, release_year, collection_id}){
         this.id = id
         this.title = title
         this.volume_number = volume_number
@@ -11,7 +11,7 @@ class Manga {
         this.description = description
         this.img = img
         this.release_year = release_year
-        this.series_id = series_id
+        this.collection_id = collection_id
 
         this.element = document.createElement('li')
         this.element.dataset.id = this.id
@@ -28,7 +28,7 @@ class Manga {
                 <p>Released ${this.release_year}</p>
                 <p>By ${this.author}</p>
                 <p>${this.description}</p>
-                <p>${this.series_id}</p>
+                <p>${this.collection_id}</p>
             </div>
             <button id="delete-bttn">Delete</button>
             <br>
@@ -38,7 +38,9 @@ class Manga {
     }
     
     appendMangaToDom(){
-        Manga.mangaContainer.append(this.mangaHTML())
+        if(this.collection_id === Collection.id){
+            Manga.mangaContainer.append(this.mangaHTML())
+        }
     }
 
     static renderMangaForm(){
@@ -61,5 +63,10 @@ class Manga {
             this.element.remove()
             mangaService.deleteManga(this.id)
         }
+    }
+
+    handleGetMangas = () => {
+        if(event.target.innerText === "Volumes Within Collection")
+        mangaService.getMangas(this.id)
     }
 }

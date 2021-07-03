@@ -22,7 +22,7 @@ class MangaService{
             description: document.getElementById("description").value,
             image_url: document.getElementById("img").value,
             release_year: document.getElementById("release_year").value,
-            series_id: document.getElementById("collection").value
+            collection_id: document.getElementById("collection").value
         }
         const configMangaObj = {
             method: "POST",
