@@ -9,13 +9,14 @@ class MangaService{
         .then(mangas => {
             for (const manga of mangas){
                 const m = new Manga(manga)
+                console.log(m.collection_id)
                 m.appendMangaToDom()
             }
         })
     }
 
-    createManga(){
-        const manga = {
+    collectMangaForm(){
+        const mangaObj = {
             title: document.getElementById("title").value,
             volume_number: document.getElementById("volume_number").value,
             author: document.getElementById("author").value,
@@ -23,15 +24,19 @@ class MangaService{
             release_year: document.getElementById("release_year").value,
             collection_id: document.getElementById("collection").value
         }
-        const configMangaObj = {
+        return mangaObj
+    }
+
+    createManga(){
+        event.preventDefault()
+        const options = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(manga)
+            body: JSON.stringify(this.collectMangaForm())
         }
-
-        fetch(`${this.endpoint}/mangas`, configMangaObj)
+        fetch(`${this.endpoint}/mangas`, options)
         .then(resp => resp.json())
         .then(manga => {
             const m = new Manga(manga)
@@ -63,7 +68,11 @@ class MangaService{
                 Released <p>${mangaInfo.release_year}</p>
                 By: <p>${mangaInfo.author}</p>
                 <p>${mangaInfo.description}</p>
+                <a id="back-bttn" href="#">Home</a>
             `
+
+            const backBttn = document.getElementById("back-bttn")
+            backBttn.addEventListener("click", gooBack)
         })
     }
 }

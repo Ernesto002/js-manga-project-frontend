@@ -32,7 +32,25 @@ function resetMangaForm(){
 }
 
 function goBack(){
+    Manga.mangaContainer.innerHTML = " "
     Collection.collectionContainer.innerHTML = " "
     collectionService.getCollections()
     Collection.renderCollectionForm()
+}
+
+function gooBack(){
+    Manga.mangaContainer.innerHTML = " "
+    collectionService.getCollections()
+    Collection.renderCollectionForm()
+}
+
+function getMangas(){
+    fetch(`${this.endpoint}/mangas`)
+    .then(resp => resp.json())
+    .then(mangas => {
+        for (const manga of mangas){
+            const m = new Manga(manga)
+            m.appendMangaToDom()
+        }
+    })
 }
