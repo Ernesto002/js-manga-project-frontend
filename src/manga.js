@@ -43,8 +43,11 @@ class Manga {
 
     static renderMangaForm(){
         Manga.mangaForm.innerHTML += `
+        <a id="back-bttn" href="#">Back</a>
+        <br>
+        <br>
         <form id="new-manga-form">
-            Add a volume to this collection!
+            Add a volume!
             <br>
             <br>
             Title: <input type="text" id="title">
@@ -56,6 +59,8 @@ class Manga {
             <input type="submit" id="create">
         <form>
         `
+        const backBttn = document.getElementById("back-bttn")
+        backBttn.addEventListener("click", goBack)
     }
 
     handleMangaDelete = () => {

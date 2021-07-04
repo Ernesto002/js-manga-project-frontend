@@ -72,12 +72,10 @@ class CollectionService{
                 <a id="back-bttn" href="#">Back</a>
                 <br>
                 <br>
-                Volumes Within This Collection:
             `
 
             const backBttn = document.getElementById("back-bttn")
             backBttn.addEventListener("click", goBack)
-            mangaService.getMangas()
         })
     }
 

@@ -9,7 +9,6 @@ class MangaService{
         .then(mangas => {
             for (const manga of mangas){
                 const m = new Manga(manga)
-                console.log(m.collection_id)
                 m.appendMangaToDom()
             }
         })
@@ -68,11 +67,12 @@ class MangaService{
                 Released <p>${mangaInfo.release_year}</p>
                 By: <p>${mangaInfo.author}</p>
                 <p>${mangaInfo.description}</p>
-                <a id="back-bttn" href="#">Home</a>
+                <a id="back-bttn" href="#">Back</a>
             `
 
             const backBttn = document.getElementById("back-bttn")
-            backBttn.addEventListener("click", gooBack)
+            backBttn.addEventListener("click", showManga)
+            Manga.mangaForm.innerHTML = " "
         })
     }
 }
