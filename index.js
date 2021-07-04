@@ -8,9 +8,6 @@ Collection.collectionForm.addEventListener("submit", handleCollectionSubmit)
 collectionService.getCollections()
 Collection.renderCollectionForm()
 
-// mangaService.getMangas()
-// Manga.renderMangaForm()
-
 function handleMangaSubmit(){
     event.preventDefault()
     mangaService.createManga()
@@ -33,24 +30,16 @@ function resetMangaForm(){
 
 function goBack(){
     Manga.mangaContainer.innerHTML = " "
+    Manga.mangaForm.innerHTML = " "
     Collection.collectionContainer.innerHTML = " "
     collectionService.getCollections()
     Collection.renderCollectionForm()
 }
 
-function gooBack(){
+function showManga(){
+    Collection.collectionContainer.innerHTML = " "
+    Collection.collectionForm.innerHTML = " "
     Manga.mangaContainer.innerHTML = " "
-    collectionService.getCollections()
-    Collection.renderCollectionForm()
-}
-
-function getMangas(){
-    fetch(`${this.endpoint}/mangas`)
-    .then(resp => resp.json())
-    .then(mangas => {
-        for (const manga of mangas){
-            const m = new Manga(manga)
-            m.appendMangaToDom()
-        }
-    })
+    mangaService.getMangas()
+    Manga.renderMangaForm()
 }

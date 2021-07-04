@@ -42,6 +42,10 @@ class Collection {
 
     static renderCollectionForm(){
         Collection.collectionForm.innerHTML += `
+        <br>
+        <button id="manga-index">Manga Index</button>
+        <br>
+        <br>
         <form id="new-collection-form">
             Add a Series!
             <br>
@@ -54,6 +58,8 @@ class Collection {
             <input type="submit" id="create-collection">
         <form>
         `
+        const mangaIndex = document.getElementById("manga-index")
+        mangaIndex.addEventListener("click", showManga)
     }
 
     handleCollectionDelete = () => {
