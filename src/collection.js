@@ -21,16 +21,22 @@ class Collection {
 
     collectionHTML(){
         this.element.innerHTML += `
-            <div>
-                <h3>${this.title}</h3>
-                <p>Released ${this.release_year}</p>
-                <p>By ${this.author}</p>
-            </div>
-            <div class="form__item">
-                <button class="bttn">Learn More</button>
-            </div>
-            <div class="form__item">
-                <button class="bttn">Delete</button>
+            <div class="div__container">
+                <div class="div__title">
+                    <h1>${this.title}</h1>
+                </div>
+                <div class="div__release">
+                    <p>Released ${this.release_year}</p>
+                </div>
+                <div class="div__author">
+                    <p>By ${this.author}</p>
+                <div>
+                <div class="form__item">
+                    <button class="bttn">Learn More</button>
+                </div>
+                <div class="form__item">
+                    <button class="bttn">Delete</button>
+                </div>
             </div>
         `
         return this.element

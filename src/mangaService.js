@@ -62,12 +62,28 @@ class MangaService{
             Manga.mangaContainer.innerHTML = " "
             Collection.collectionContainer.innerHTML = " "
             Manga.mangaContainer.innerHTML += `
-                <h3>${mangaInfo.title}</h3>
-                Volume <p>${mangaInfo.volume_number}</p>
-                Released <p>${mangaInfo.release_year}</p>
-                By: <p>${mangaInfo.author}</p>
-                <p>${mangaInfo.description}</p>
-                <a id="back-bttn" href="#">Back</a>
+                <div class="div__container">
+                    <div class="div__title">
+                        <h3>${mangaInfo.title}</h3>
+                    </div>
+                    <div class="div__volume_number">
+                        Volume ${mangaInfo.volume_number}
+                    </div>
+                    <br>
+                    <div class="div__release_year">
+                        Released ${mangaInfo.release_year}
+                    </div>
+                    <br>
+                    <div class="div__author">
+                        By: ${mangaInfo.author}
+                    </div>
+                    <br>
+                    <div class="div__description">
+                        Description: ${mangaInfo.description}
+                    </div>
+                    <br>
+                    <a id="back-bttn" href="#">Back</a>
+                </div>
             `
 
             const backBttn = document.getElementById("back-bttn")

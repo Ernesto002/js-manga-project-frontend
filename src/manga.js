@@ -22,10 +22,16 @@ class Manga {
 
     mangaHTML(){
         this.element.innerHTML += `
-            <div>
-                <h3 id="manga-title">${this.title}</h3>
-                <p>Volume ${this.volume_number}</p>
-                <p id="m-collection-id">${this.collection_id}</p>
+            <div class="div__container">
+                <div class="div__title">   
+                    <h1 id="manga-title">${this.title}</h1>
+                </div>
+                <div class="div__volume_number">
+                    <p>Volume ${this.volume_number}</p>
+                </div>
+                <div class="div__collection_id">
+                    <p id="m-collection-id">${this.collection_id}</p>
+                </div>
             </div>
             <div class="form__item">
                 <button class="bttn">Learn More</button>
@@ -43,6 +49,7 @@ class Manga {
 
     static renderMangaForm(){
         Manga.mangaForm.innerHTML += `
+        <br>
         <a id="back-bttn" href="#">Back</a>
         <br>
         <br>

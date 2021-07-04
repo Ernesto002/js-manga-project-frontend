@@ -63,13 +63,27 @@ class CollectionService{
             Collection.collectionContainer.innerHTML = " "
             Collection.collectionForm.innerHTML = " "
             Collection.collectionContainer.innerHTML += `
-                <h3 id="collection-title">${collectionInfo.title}</h3>
-                <p>${collectionInfo.volume_count} Volumes</p>
-                Released in<p>${collectionInfo.release_year}</p>
-                By <p>${collectionInfo.author}</p>
-                Description: <p>${collectionInfo.description}</p>
-                <p id="collection-id">${collectionInfo.id}</p>
-                <a id="back-bttn" href="#">Back</a>
+                <div class="div__container">
+                    <div class="div__title">
+                        <h1 id="collection-title">${collectionInfo.title}</h1>
+                    </div>
+                    <div class="div__volume_count">
+                        <p>${collectionInfo.volume_count} Volumes</p>
+                    </div>
+                    <div class="div__release">
+                        Released in ${collectionInfo.release_year}
+                    </div>
+                    <br>
+                    <div class="div__author">
+                        By ${collectionInfo.author}
+                    </div>
+                    <br>
+                    <div class="div__description">
+                        Description: ${collectionInfo.description}
+                    </div>
+                    <p id="collection-id">${collectionInfo.id}</p>
+                    <a id="back-bttn" href="#">Back</a>
+                </div>
             `
 
             const backBttn = document.getElementById("back-bttn")
