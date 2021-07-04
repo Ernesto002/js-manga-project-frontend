@@ -14,28 +14,23 @@ class MangaService{
         })
     }
 
-    collectMangaForm(){
-        const mangaObj = {
+    createManga(){
+        const manga = {
             title: document.getElementById("title").value,
             volume_number: document.getElementById("volume_number").value,
             author: document.getElementById("author").value,
             description: document.getElementById("description").value,
             release_year: document.getElementById("release_year").value,
-            collection_id: document.getElementById("collection").value
+            collection_id: document.getElementById("collection").value 
         }
-        return mangaObj
-    }
-
-    createManga(){
-        event.preventDefault()
-        const options = {
-            method: "POST",
+        const configObj = {
+            method: 'POST', 
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(this.collectMangaForm())
+            body: JSON.stringify(manga)
         }
-        fetch(`${this.endpoint}/mangas`, options)
+        fetch(`${this.endpoint}/mangas`, configObj)
         .then(resp => resp.json())
         .then(manga => {
             const m = new Manga(manga)
@@ -64,7 +59,7 @@ class MangaService{
             Manga.mangaContainer.innerHTML += `
                 <div class="div__container">
                     <div class="div__title">
-                        <h3>${mangaInfo.title}</h3>
+                        <h1>${mangaInfo.title}</h1>
                     </div>
                     <div class="div__volume_number">
                         Volume ${mangaInfo.volume_number}
