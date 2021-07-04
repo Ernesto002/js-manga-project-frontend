@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+.div__title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+
+.div__release {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+
+.div__author {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+
+.div__volume_count {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+
+.div__description {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+
+.div__volume_number {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+
+.div__collection_id {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
