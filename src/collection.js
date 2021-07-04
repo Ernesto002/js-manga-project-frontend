@@ -46,16 +46,33 @@ class Collection {
         <button id="manga-index">Manga Index</button>
         <br>
         <br>
-        <form id="new-collection-form">
-            Add a Series!
-            <br>
-            <br>
-            Title: <input type="text" id="collection-title">
-            Volume Count: <input type="text" id="volume_count">
-            Author: <input type="text" id="collection-author">
-            Description: <input type="text" id="collection-description">
-            Release Year: <input type="text" id="collection-release">
-            <input type="submit" id="create-collection">
+        <form class="form">
+            <div class="form__title">
+                Add a Series!
+            </div>
+            <div class="form__item">
+                <label for="giventitle" class="form__label">Title</label>
+                <input type="text" class="form__input" name="giventitle" id="collection-title" placeholder="Series title">
+            </div>
+            <div class="form__item">
+                <label for="givenvolumecount" class="form__label">Volume Count</label>
+                <input type="text" class="form__input" name="givenvolumecount" id="volume_count" placeholder="Total number of volumes">
+            </div>
+            <div class="form__item">   
+                <label for="givenauthor" class="form__label">Author</label>
+                <input type="text" class="form__input" name="givenauthor" id="collection-author" placeholder="Author of series">
+            </div>
+            <div class="form__item">
+                <label for="givendescription" class="form__label">Description</label>
+                <input type="text" class="form__input" name="givendescription" id="collection-description" placeholder="Summary of series">
+            </div>
+            <div class="form__item">
+                <label for="givenreleaseyear" class="form__label">Release Year</label>
+                <input type="text" class="form__input" name="givenreleaseyear" id="collection-release" placeholder="Year series was released">
+            </div>
+            <div class="form__item">
+                <button class="form__bttn" type="submit">Submit</button>
+            </div>
         <form>
         `
         const mangaIndex = document.getElementById("manga-index")
