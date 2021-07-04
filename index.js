@@ -21,11 +21,20 @@ function handleCollectionSubmit(){
 }
 
 function resetCollectionForm(){
-    document.querySelector("#new-collection-form").reset()
+    document.querySelector("#collection-title").value = " "
+    document.querySelector("#volume_count").value = " "
+    document.querySelector("#collection-author").value = " "
+    document.querySelector("#collection-description").value = " "
+    document.querySelector("#collection-release").value = " "
 }
 
 function resetMangaForm(){
-    document.querySelector("#new-manga-form").reset()
+    document.querySelector("#title").value = " "
+    document.querySelector("#volume_number").value = " "
+    document.querySelector("#author").value = " "
+    document.querySelector("#description").value = " "
+    document.querySelector("#release_year").value = " "
+    document.querySelector("#collection").value = " "
 }
 
 function goBack(){
