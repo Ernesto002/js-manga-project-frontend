@@ -26,12 +26,12 @@ class Collection {
                 <p>Released ${this.release_year}</p>
                 <p>By ${this.author}</p>
             </div>
-            <button id="learn-more">Learn More</button>
-            <br>
-            <br>
-            <button id="delete-collection">Delete</button>
-            <br>
-            <br>
+            <div class="form__item">
+                <button class="bttn">Learn More</button>
+            </div>
+            <div class="form__item">
+                <button class="bttn">Delete</button>
+            </div>
         `
         return this.element
     }
@@ -43,7 +43,9 @@ class Collection {
     static renderCollectionForm(){
         Collection.collectionForm.innerHTML += `
         <br>
-        <button id="manga-index">Manga Index</button>
+        <div class="form__item">
+            <button id="manga-index">Manga Index</button>
+        </div>
         <br>
         <br>
         <form class="form">

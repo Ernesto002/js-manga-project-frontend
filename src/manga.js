@@ -27,12 +27,12 @@ class Manga {
                 <p>Volume ${this.volume_number}</p>
                 <p id="m-collection-id">${this.collection_id}</p>
             </div>
-            <button id="learn-more">Learn More</button>
-            <br>
-            <br>
-            <button id="delete-bttn">Delete</button>
-            <br>
-            <br>
+            <div class="form__item">
+                <button class="bttn">Learn More</button>
+            </div>
+            <div class="form__item">
+                <button class="bttn">Delete</button>
+            </div>
         `
         return this.element
     }

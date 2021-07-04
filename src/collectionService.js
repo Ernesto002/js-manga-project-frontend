@@ -70,8 +70,6 @@ class CollectionService{
                 Description: <p>${collectionInfo.description}</p>
                 <p id="collection-id">${collectionInfo.id}</p>
                 <a id="back-bttn" href="#">Back</a>
-                <br>
-                <br>
             `
 
             const backBttn = document.getElementById("back-bttn")
