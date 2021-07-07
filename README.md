@@ -48,3 +48,7 @@ into your terminal for mac in order to use the app.
 # Back-end repository
 
 The back-end file for this app can be found [here](https://github.com/Ernesto002/js-manga-project-api)
+
+# License
+
+This code is available for the general public under this [LICENSE](https://github.com/Ernesto002/js-manga-project-frontend/blob/master/LICENSE).
