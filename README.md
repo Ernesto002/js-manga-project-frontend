@@ -51,7 +51,7 @@ The back-end repository for this app can be found [here](https://github.com/Erne
 
 # Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/Ernesto002/js-manga-project-frontend. This project is intended to be a safe, welcoming space for collaboration, and contributers are expected to adhere to the [Code of Conduct](https://github.com/Ernesto002/js-manga-project-frontend/blob/master/CONTRIBUTING.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/Ernesto002/js-manga-project-frontend. This project is intended to be a safe, welcoming space for collaboration, and contributers are expected to adhere to the [Code of Conduct](https://github.com/Ernesto002/js-manga-project-frontend/blob/master/CODE_OF_CONDUCT.md).
 
 # License
 
