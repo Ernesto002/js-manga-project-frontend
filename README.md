@@ -19,7 +19,7 @@ into your terminal
 
 # Usage
 
-Once you've cloned both repositories, open up the back-end file then run
+Once you've cloned both repositories, open up the API file then run
 ```bash
 rake db:migrate
 rake db:seed
@@ -47,7 +47,7 @@ into your terminal for mac in order to use the app.
 
 # Back-end repository
 
-The back-end file for this app can be found [here](https://github.com/Ernesto002/js-manga-project-api)
+The back-end repository for this app can be found [here](https://github.com/Ernesto002/js-manga-project-api)
 
 # Contributing
 
