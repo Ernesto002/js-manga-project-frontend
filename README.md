@@ -45,6 +45,6 @@ open index.html
 ```
 into your terminal for mac in order to use the app.
 
-# Back end repository
+# Back-end repository
 
 The back-end file for this app can be found [here](https://github.com/Ernesto002/js-manga-project-api)
